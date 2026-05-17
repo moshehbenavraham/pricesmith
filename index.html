@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuoteKit — Win more deals with beautiful proposals</title>
+    <meta name="description" content="QuoteKit helps freelancers, agencies, and small businesses create branded proposals, manage pricing, share client links, and track deal activity." />
+    <meta name="author" content="QuoteKit" />
+    <meta name="theme-color" content="#3c54e3" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="application-name" content="QuoteKit" />
+    <link rel="canonical" href="https://quotekit.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuoteKit" />
+    <meta property="og:title" content="QuoteKit — Win more deals with beautiful proposals" />
+    <meta property="og:description" content="Create branded proposals, manage pricing, share client links, and track deal activity from one workspace." />
+    <meta property="og:url" content="https://quotekit.app/" />
+    <meta property="og:image" content="https://quotekit.app/social-card.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:alt" content="QuoteKit — a workspace for branded client proposals" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@QuoteKit" />
+    <meta name="twitter:title" content="QuoteKit — Win more deals with beautiful proposals" />
+    <meta name="twitter:description" content="Create branded proposals, manage pricing, share client links, and track deal activity from one workspace." />
+    <meta name="twitter:image" content="https://quotekit.app/social-card.svg" />
+    <meta name="twitter:image:alt" content="QuoteKit — a workspace for branded client proposals" />
+    <meta name="twitter:url" content="https://quotekit.app/" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--
+      Theme bootstrap: applies the persisted (or OS-preferred) theme to
+      <html> before paint so the dark palette in src/index.css and the
+      next-themes provider land on the same value. Keep the storageKey in
+      sync with src/components/theme-provider.tsx.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('quotekit-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored && stored !== 'system'
+            ? stored
+            : (prefersDark ? 'dark' : 'light');
+          var root = document.documentElement;
+          if (theme === 'dark') root.classList.add('dark');
+          else root.classList.remove('dark');
+          root.style.colorScheme = theme;
+        } catch (_) {
+          /* localStorage unavailable (private mode, CSP) — fall back to
+             whatever the CSS default is. */
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
